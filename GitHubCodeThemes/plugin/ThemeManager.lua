@@ -61,6 +61,9 @@ function ThemeManager:Compile(S)
 		dcall(function()
 			settings().Studio[i] = v
 		end)
+		if i == "Theme" then
+			settings().Studio:GetPropertyChangedSignal("Theme"):Wait() --Prevents a rare crash for grapejuice linux
+		end
 	end
 end
 
