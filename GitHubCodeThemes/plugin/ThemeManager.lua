@@ -57,13 +57,16 @@ end
 
 function ThemeManager:Compile(S)
 	local Grab = require(S)
+	if Grab.Theme then --Prevents a conflict that will result in a most likely crash (only linux/grapejuice tested)
+		if settings().Studio.Theme ~= Grab.Theme then
+			settings().Studio.Theme = Grab.Theme
+		end
+		Grab.Theme = nil
+	end
 	for i,v in next, Grab do
 		dcall(function()
 			settings().Studio[i] = v
 		end)
-		if i == "Theme" then
-			settings().Studio:GetPropertyChangedSignal("Theme"):Wait() --Prevents a rare crash for grapejuice linux
-		end
 	end
 end
 
