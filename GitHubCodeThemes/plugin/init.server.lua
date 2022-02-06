@@ -2,7 +2,7 @@
 	Plugin made by interpreterK
 	Plugin based off of: https://github.com/primer/github-vscode-theme
 
-	Plugin Repo:
+	Plugin Repo: https://github.com/interpreterK/GitHub-ROBLOX-Studio-Themes
 	! Github users, you need the gui dependencies for this to work get them from the plugin -> https://www.roblox.com/library/8722381438/GitHub-Code-Editor-Themes
 ]]
 
